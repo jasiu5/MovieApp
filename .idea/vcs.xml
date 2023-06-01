@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/MovieService" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/eurekaserver" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/frontend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gateway-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/movies-django" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/eurekaserver" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/frontend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/gateway-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/movies-django" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/movieservice" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/searchmicroservice" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/userauthservice" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/searchmicroservice" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/userauthservice" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 'postgres'
+      PGPASSWORD: 'postgres'
+    ports:
+      - '5432:5432'
+    expose:
+      - 5432
+    healthcheck:
+      test: pg_isready
+      interval: 10s
+      retries: 5
+      start_period: 5s
+      timeout: 10s
+    volumes:
+      - ./db.ddl:/docker-entrypoint-initdb.d/create_tables.sql
+  backend:
+    build:
+      context: movies-django
+      target: backend-build
+    ports:
+      - '8000:8000'
+    expose:
+      - 8000
+    depends_on:
+      db:
+        condition: service_healthy
+  frontend:
+    build:
+      context: frontend
+      target: frontend-build
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend/src:/frontend/src:ro

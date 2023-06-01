@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MovieService/MovieService.iml" filepath="$PROJECT_DIR$/MovieService/MovieService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/searchmicroservice/SearchMicroservice.iml" filepath="$PROJECT_DIR$/searchmicroservice/SearchMicroservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userauthservice/UserAuthService.iml" filepath="$PROJECT_DIR$/userauthservice/UserAuthService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaserver/eureka.server.iml" filepath="$PROJECT_DIR$/eurekaserver/eureka.server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-service/gateway-service.iml" filepath="$PROJECT_DIR$/gateway-service/gateway-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pis_projekt.iml" filepath="$PROJECT_DIR$/.idea/pis_projekt.iml" />
+    </modules>
+  </component>
+</project>

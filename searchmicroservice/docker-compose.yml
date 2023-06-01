@@ -1,0 +1,38 @@
+services:
+
+  application:
+    build: ./
+    container_name: search-service
+    restart: always
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATASOURCE_PASSWORD=root
+      - CLUSTER_NAME=elastic
+      - CLUSTER_NODES=elastic:9200
+
+
+  # Service ElasticSearch
+  elasticsearch:
+    image: elastic/elasticsearch:7.17.3
+    container_name: elastic
+    hostname: elastic
+    ports:
+      - 9200:9200
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    environment:
+      - http.host=0.0.0.0
+      - transport.host=elastic
+      - network.host=0.0.0.0
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - cluster.name=elastic
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+volumes:
+  esdata:
+    driver: local

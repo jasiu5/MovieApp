@@ -1,0 +1,13 @@
+
+ES version: 7.17.3
+
+
+download and start with:
+
+docker run -p 9200:9200 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.17.3
+
+### current controllers / endpoints:
+
+search(string s) - mapping "/search"
+int: string s (search string)
+out: List of movie ids 

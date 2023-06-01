@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    
+    tools {nodejs "NodeJS"} 
+    
+    options {
+        gitLabConnection('jenkins-hello')
+    }
+
+    stages {
+        stage('test'){
+            steps{
+                updateGitlabCommitStatus name: 'test', state: 'pending'
+                sh 'npm install'
+                updateGitlabCommitStatus name: 'test', state: 'running'
+                sh 'npm test'
+                updateGitlabCommitStatus name: 'test', state: 'success'
+            }
+        }
+        stage('build'){
+            steps{
+                updateGitlabCommitStatus name: 'build', state: 'running'
+                script{
+                    docker.withRegistry('http://localhost:9876', 'ae69111d-2a7a-4074-a08d-be99b5ca980f') {
+                        def customImage = docker.build("frontend-image/${env.BRANCH_NAME}:latest")
+                        customImage.push()
+                    }
+                }
+                updateGitlabCommitStatus name: 'build', state: 'success'
+            }
+        }
+    }
+}
